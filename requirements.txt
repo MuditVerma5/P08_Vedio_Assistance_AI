@@ -1,0 +1,45 @@
+# AI Meeting Assistant requirements.txt
+# Python >= 3.10 recommended
+# Versions below reflect latest PyPI releases as of 2026-09-17
+
+# Audio / Video acquisition
+yt-dlp>=2026.8.19                 # Download audio from YouTube URLs
+audiooop-lts>=25.1.1                     # Audio file manipulation / format conversion
+ffmpeg-python>=0.2.0              # FFmpeg bindings (FFmpeg binary must be installed separately)
+
+# Speech-to-Text (local Whisper)
+openai-whisper>=20250625          # OpenAI Whisper (runs locally)
+torch>=2.14.0                     # PyTorch backend for Whisper
+torchaudio>=2.11.0                # Audio utilities for PyTorch
+
+# Translation (Hindi <-> English)
+deep-translator>=1.11.4           # Lightweight translation wrapper (Google backend)
+
+# LLM Orchestration - LangChain LCEL + Mistral
+langchain>=1.4.1                  # NOTE: major version jump from 0.2.x -> 1.x, breaking changes likely
+langchain-core>=1.6.3
+langchain-community>=0.4.2
+langchain-mistralai>=1.1.6        # LangChain wrapper for Mistral API
+mistralai>=2.10.1                 # Official Mistral Python client
+
+# RAG Pipeline
+chromadb>=1.5.9                   # Local vector store
+sentence-transformers>=6.0.1      # HuggingFace embedding models
+langchain-huggingface>=1.2.2      # LangChain HuggingFace embeddings bridge
+huggingface-hub>=1.32.0           # Model downloading from HuggingFace Hub
+tiktoken>=0.14.0                  # Token counting for text splitting
+
+# Streamlit UI
+streamlit>=1.64.0
+streamlit-extras>=1.6.0           # Additional Streamlit widgets / utilities
+watchdog>=6.0.0                   # File-change watcher (improves Streamlit hot-reload)
+
+# PDF & TXT Export
+reportlab>=5.0.1                  # PDF generation
+fpdf2>=2.8.8                      # Lightweight alternative PDF library
+
+# Utilities
+python-dotenv>=1.2.3              # Load API keys from .env
+numpy>=2.5.3
+tqdm>=4.70.1                      # Progress bars
+requests>=2.34.2
